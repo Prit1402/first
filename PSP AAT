@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<conio.h>
+float gain()
+{
+    float b,og,g;
+    printf("enter beta and open circuit voltage gain \n");
+    scanf("%f%f",&b,&og);
+    g=og/(1+(og*b));
+    return g;
+}
+float in_res(){ 
+    int v,i,r;
+    printf("enter the input voltage and input current\n");
+    scanf("%d%d",&v,&i);
+    r=v/i;
+    return r;
+}
+float out_res(){
+    int r,v,i;
+    printf("enter the open circuit voltage and short cicuit output current\n");
+    scanf("%d%d",&v,&i);
+    r=v/i;
+    return r;
+}
+int main()
+{
+    int c;
+    printf("enter the number for the respective value\n 1.gain of amplifier\n 2.input resistance \n 3.output resistance\n");
+    scanf("%d",&c);
+    switch(c)
+    {case(1):
+      printf("the gain of the amplifier %f",gain());
+      break;
+      case(2):
+      printf("the input voltage is %f",in_res());
+      break;
+      case(3):
+      printf("the output resistance is %f",out_res());
+    return 0;
+}}
